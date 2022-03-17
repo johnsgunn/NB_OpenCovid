@@ -1,0 +1,27 @@
+<h1>Users</h1>
+<div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+        <span class="sr-only" id="loading">Loading...</span>
+    </div>
+</div>
+<table class="table" id='tab'>
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Active Cases</th>
+            <th scope="col">Active Cases Changed</th>
+            <th scope="col">Total Cases</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let caseHistory of caseHistories">
+            <td>{{ caseHistory.date_active }}</td>
+            <td>{{ caseHistory.active_cases }}</td>
+            <td>{{ caseHistory.active_cases_change }}</td>
+            <td>{{ caseHistory.cumulative_cases }}</td>
+            <td> <button class='btn btn-info' data-toggle="modal"
+                    data-target="#myModal">Details</button> </td>
+        </tr>
+    </tbody>
+</table>
